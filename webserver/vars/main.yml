@@ -1,0 +1,6 @@
+---
+# vars file for webserver
+package: "httpd"
+p_pack: "php"
+port_no: "80/tcp"
+

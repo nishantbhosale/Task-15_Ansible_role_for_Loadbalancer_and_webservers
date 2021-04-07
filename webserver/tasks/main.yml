@@ -1,0 +1,23 @@
+---
+# tasks file for webserver
+- name: Installing Apache Webserver
+  package:
+          name: " {{ package }} "
+          state: present
+
+- name: copy web file 
+  template:
+          src: "index.html"
+          dest: "/var/www/html/index.php"
+
+- name: Installing PHP
+  package:
+          name: " {{ p_pack }} "
+          state: present
+
+  notify: "restarting webserver"
+
+- name: starting Apache WebServer
+  service:
+          name: httpd
+          state: started

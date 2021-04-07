@@ -1,0 +1,6 @@
+---
+# handlers file for webserver
+- name: "restarting webserver"
+  service:
+          name: "{{ package }}"
+          state: restarted
